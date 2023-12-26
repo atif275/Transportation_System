@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{F0A8B2DF-5675-416D-AD83-5692F2D338BA}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="trans/Program.cs">
+    <Files>
+      <File FileName="trans/Program.cs" Line="375" Column="1" />
+      <File FileName="trans/Train.cs" Line="32" Column="1" />
+      <File FileName="trans/Client.cs" Line="10" Column="23" />
+      <File FileName="trans/Booking.cs" Line="1" Column="1" />
+      <File FileName="trans/Bike.cs" Line="32" Column="1" />
+      <File FileName="trans/Aeroplane.cs" Line="32" Column="1" />
+      <File FileName="trans/Car.cs" Line="32" Column="1" />
+      <File FileName="trans/Customer.cs" Line="1" Column="1" />
+      <File FileName="../tr/Transportation/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="trans" expanded="True">
+            <Node name="trans">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.trans PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
