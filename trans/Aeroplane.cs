@@ -12,6 +12,7 @@ public class Aeroplane : IVehicles
     public DateTime DepartureDateTime { get; set; }
     public int TotalSeats { get; set; }
     public int AvailableSeats { get; set; }
+    public DateTime time { get; set; }
 
     /* public void PrintDetails()
      {
@@ -30,6 +31,53 @@ public class Aeroplane : IVehicles
         // Implement the logic to get the count of available cars
         List<Vehicle> allVehicles = LoadVehicles();
         return allVehicles.Count(v => v.Type == "Aeroplane" && v.Status == "Available");
+    }
+    public Vehicle ViewVehicleDetailsByDate(DateTime date)
+    {
+        Vehicle availableVehicle =null;
+        DateTime obj;
+        // Read existing vehicles from the file
+        List<Vehicle> allVehicles = LoadVehicles();
+
+        // Filter vehicles based on the provided date
+        List<Vehicle> vehiclesOnDate = allVehicles
+            .Where(vehicle => vehicle.DepartureDateTime.Date == date.Date && vehicle.Type == "Aeroplane" && vehicle.Status == "Available")
+            .ToList();
+
+        if (vehiclesOnDate.Count > 0)
+        {
+            Console.WriteLine($"Vehicles on {date.ToShortDateString()}:");
+            Dictionary<int, DateTime> myDic = new Dictionary<int, DateTime>();
+            int i= 1;
+            foreach (var vehicle in vehiclesOnDate)
+            {
+
+                Console.WriteLine($"{i}. Departure Date and Time: {vehicle.DepartureDateTime}");
+                Console.WriteLine("-----------------");
+                myDic.Add(i, vehicle.DepartureDateTime);
+                i++;
+                
+            }
+            Console.WriteLine("Enter Slot Number : ");
+            string strNumber = Console.ReadLine();
+            int intValue = int.Parse(strNumber);
+            
+            if (myDic.ContainsKey(intValue))
+            {
+                obj = myDic[intValue];
+                Console.WriteLine("time = " +obj.TimeOfDay);
+
+                availableVehicle = AssignVehicle(obj);
+                
+            }
+            
+            //return obj;
+
+
+        }
+        return availableVehicle;
+
+
     }
     public void ViewVehicleDetailsByType()
     {
@@ -77,15 +125,16 @@ public class Aeroplane : IVehicles
     }
 
 
-    public Vehicle AssignVehicle()
+    public Vehicle AssignVehicle(DateTime obj)
     {
         List<Vehicle> allVehicles = LoadVehicles();
-        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Aeroplane" && v.Status == "Available");
+        Vehicle availableVehicle = null;
+        availableVehicle = allVehicles.Find(v => v.Type == "Aeroplane" && v.Status == "Available" && v.DepartureDateTime.TimeOfDay ==obj.TimeOfDay);
         //Vehicle availableVehicle = vehicles.Find(v => v.Type == vehicleType && v.Status == "Available");
 
         if (availableVehicle != null)
         {
-            availableVehicle.Status = "Assigned";
+            //availableVehicle.Status = "Assigned";
             return availableVehicle;
         }
 

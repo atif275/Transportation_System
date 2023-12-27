@@ -275,14 +275,28 @@ class Program
             Console.Write("Enter arrival location: ");
             string arrivalDestination = Console.ReadLine();
             int numberOfPassengers = GetIntInput("Enter the number of passengers: ");
-            DateTime departureDateTime = GetDateTimeInput("Enter departure date and time (yyyy-MM-dd HH:mm): ");
+            DateTime departureDateTime = GetDateTimeInput("Enter departure date and time (yyyy-MM-dd): ");
             IVehicles Type = VehiclesFactory.getVahicles(vehicleTypeChoice);
-            Vehicle assignedVehicle = Type.AssignVehicle();
-            decimal estimatedFare = GenerateRandomFare();
-            Console.WriteLine($"Estimated Fare: Rs. {estimatedFare}");
+            //Vehicle assignedVehicle = Type.AssignVehicle();
+            Console.WriteLine("The Avaliable Vehicle at you time slot are : ");
+            DateTime obj ;
+            
+            Vehicle assignedVehicle = null;
+            if (assignedVehicle == null)
+            {
+                
+
+                 assignedVehicle = Type.ViewVehicleDetailsByDate(departureDateTime);
+            }
+            decimal estimatedFare = GenerateRandomFare( vehicleTypeChoice);
+            Console.WriteLine($"Estimated Fare per Passenger: Rs. {estimatedFare}");
+            Console.WriteLine($" Total Estimated Fare : Rs. {estimatedFare * numberOfPassengers}");
+
 
             Console.Write("Do you want to confirm the booking? (yes/no): ");
             string confirmBooking = Console.ReadLine();
+            obj = Type.time;
+            Console.WriteLine("obj = " + obj);
 
             if (confirmBooking.ToLower() == "yes")
             {
@@ -294,7 +308,7 @@ class Program
                     CurrentDestination = currentDestination,
                     ArrivalDestination = arrivalDestination,
                     NumberOfPassengers = numberOfPassengers,
-                    DepartureDateTime = departureDateTime,
+                    DepartureDateTime = obj,
                     EstimatedFare = estimatedFare
                 };
                 if (bookings == null)
@@ -309,6 +323,7 @@ class Program
                 //Vehicle assignedVehicle = Type.AssignVehicle();
                 if (assignedVehicle != null)
                 {
+                    assignedVehicle.Status = "Assigned";
                     Console.WriteLine("Booking confirmed successfully. Here is your booking slip:");
                     Console.WriteLine($"Booking ID: {newBooking.Id}");
                     Console.WriteLine($"Vehicle Type: {assignedVehicle.Type}");
@@ -360,10 +375,42 @@ class Program
             }
         }
 
-        static decimal GenerateRandomFare()
+        static decimal GenerateRandomFare(int type)
         {
             Random rand = new Random();
-            return rand.Next(1000, 10001);
+            if (type == 1)
+            {
+                
+                return rand.Next(1000, 3000);
+
+            }
+            else if(type == 2)
+            {
+                return rand.Next(5000, 8000);
+
+            }
+            else if (type == 3)
+            {
+                return rand.Next(200, 1000);
+
+            }
+            else if (type == 4)
+            {
+                return rand.Next(15000, 40000);
+
+            }
+            else if (type == 5)
+            {
+                return rand.Next(3000, 5000);
+
+            }
+            else if (type == 6)
+            {
+                return rand.Next(1000, 3500);
+
+            }
+            
+            return 0;
         }
 
         //static Vehicle AssignVehicle(string vehicleType)

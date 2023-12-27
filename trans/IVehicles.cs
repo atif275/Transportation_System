@@ -13,10 +13,12 @@ public interface IVehicles
         DateTime DepartureDateTime { get; set; }
         int TotalSeats { get; set; }
         int AvailableSeats { get; set; }
+        DateTime time { get;  set; }
 
         int GetAvailableCount();
         void ViewVehicleDetailsByType();
-        Vehicle AssignVehicle();
+        Vehicle AssignVehicle(DateTime obj);
+        Vehicle ViewVehicleDetailsByDate(DateTime date);
 
 
 

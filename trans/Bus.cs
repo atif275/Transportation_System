@@ -12,6 +12,7 @@ public class Bus : IVehicles
     public DateTime DepartureDateTime { get; set; }
     public int TotalSeats { get; set; }
     public int AvailableSeats { get; set; }
+    public DateTime time { get; set; }
 
 
     /* public void PrintDetails()
@@ -83,17 +84,64 @@ public class Bus : IVehicles
 
         return new List<Vehicle>();
     }
+    public Vehicle ViewVehicleDetailsByDate(DateTime date)
+    {
+        Vehicle availableVehicle = null;
+        DateTime obj;
+        // Read existing vehicles from the file
+        List<Vehicle> allVehicles = LoadVehicles();
+
+        // Filter vehicles based on the provided date
+        List<Vehicle> vehiclesOnDate = allVehicles
+            .Where(vehicle => vehicle.DepartureDateTime.Date == date.Date && vehicle.Type == "Aeroplane" && vehicle.Status == "Available")
+            .ToList();
+
+        if (vehiclesOnDate.Count > 0)
+        {
+            Console.WriteLine($"Vehicles on {date.ToShortDateString()}:");
+            Dictionary<int, DateTime> myDic = new Dictionary<int, DateTime>();
+            int i = 1;
+            foreach (var vehicle in vehiclesOnDate)
+            {
+
+                Console.WriteLine($"Departure Date and Time: {vehicle.DepartureDateTime}");
+                Console.WriteLine("-----------------");
+                myDic.Add(i, vehicle.DepartureDateTime);
+                i++;
+
+            }
+            Console.WriteLine("Enter Slot Number : ");
+            string strNumber = Console.ReadLine();
+            int intValue = int.Parse(strNumber);
+
+            if (myDic.ContainsKey(intValue))
+            {
+                obj = myDic[intValue];
+                Console.WriteLine("time = " + obj.TimeOfDay);
+
+                availableVehicle = AssignVehicle(obj);
+
+            }
+
+            //return obj;
 
 
-    public Vehicle AssignVehicle()
+        }
+        return availableVehicle;
+
+
+    }
+
+
+    public Vehicle AssignVehicle(DateTime obj)
     {
         List<Vehicle> allVehicles = LoadVehicles();
-        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Bus" && v.Status == "Available");
+        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Bus" && v.Status == "Available" && v.DepartureDateTime.TimeOfDay == obj.TimeOfDay);
         //Vehicle availableVehicle = vehicles.Find(v => v.Type == vehicleType && v.Status == "Available");
 
         if (availableVehicle != null)
         {
-            availableVehicle.Status = "Assigned";
+            //availableVehicle.Status = "Assigned";
             return availableVehicle;
         }
 
