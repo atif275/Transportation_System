@@ -6,22 +6,24 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.trans PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="trans/Truck.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="trans/Train.cs">
     <Files>
       <File FileName="trans/Program.cs" Line="375" Column="1" />
-      <File FileName="trans/Train.cs" />
+      <File FileName="trans/Train.cs" Line="76" Column="1" />
       <File FileName="trans/Client.cs" />
-      <File FileName="trans/Booking.cs" />
-      <File FileName="trans/Bike.cs" />
-      <File FileName="trans/Aeroplane.cs" />
-      <File FileName="trans/Car.cs" />
+      <File FileName="trans/Booking.cs" Line="1" Column="1" />
+      <File FileName="trans/Bike.cs" Line="86" Column="48" />
+      <File FileName="trans/Aeroplane.cs" Line="86" Column="48" />
+      <File FileName="trans/Car.cs" Line="87" Column="52" />
       <File FileName="trans/Customer.cs" />
-      <File FileName="trans/Truck.cs" Line="1" Column="1" />
+      <File FileName="trans/Truck.cs" Line="90" Column="48" />
+      <File FileName="trans/Bus.cs" Line="74" Column="9" />
+      <File FileName="trans/IVehicles.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="trans" expanded="True">
+          <Node name="trans">
             <Node name="trans" expanded="True" />
           </Node>
         </State>
