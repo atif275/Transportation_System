@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ATIFHANIF/Projects/trans/trans/trans.csproj": {}
+    "/Users/ATIFHANIF/Desktop/sda/Transportation_System/trans/trans.csproj": {}
   },
   "projects": {
-    "/Users/ATIFHANIF/Projects/trans/trans/trans.csproj": {
+    "/Users/ATIFHANIF/Desktop/sda/Transportation_System/trans/trans.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ATIFHANIF/Projects/trans/trans/trans.csproj",
+        "projectUniqueName": "/Users/ATIFHANIF/Desktop/sda/Transportation_System/trans/trans.csproj",
         "projectName": "trans",
-        "projectPath": "/Users/ATIFHANIF/Projects/trans/trans/trans.csproj",
+        "projectPath": "/Users/ATIFHANIF/Desktop/sda/Transportation_System/trans/trans.csproj",
         "packagesPath": "/Users/ATIFHANIF/.nuget/packages/",
-        "outputPath": "/Users/ATIFHANIF/Projects/trans/trans/obj/",
+        "outputPath": "/Users/ATIFHANIF/Desktop/sda/Transportation_System/trans/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ATIFHANIF/.nuget/NuGet/NuGet.Config"

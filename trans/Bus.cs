@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-public class Bike : IVehicles
+public class Bus : IVehicles
 {
     public string Id { get; set; }
     public string Type { get; set; }
@@ -12,6 +12,7 @@ public class Bike : IVehicles
     public DateTime DepartureDateTime { get; set; }
     public int TotalSeats { get; set; }
     public int AvailableSeats { get; set; }
+
 
     /* public void PrintDetails()
      {
@@ -29,19 +30,22 @@ public class Bike : IVehicles
     {
         // Implement the logic to get the count of available cars
         List<Vehicle> allVehicles = LoadVehicles();
-        return allVehicles.Count(v => v.Type == "Bike" && v.Status == "Available");
+        return allVehicles.Count(v => v.Type == "Bus" && v.Status == "Available");
     }
+
+
+
     public void ViewVehicleDetailsByType()
     {
         // Read existing vehicles from the file
         List<Vehicle> allVehicles = LoadVehicles();
 
         // Filter vehicles by the provided type
-        List<Vehicle> matchingVehicles = allVehicles.Where(v => v.Type == "bike").ToList();
+        List<Vehicle> matchingVehicles = allVehicles.Where(v => v.Type == "Bus").ToList();
 
         if (matchingVehicles.Count > 0)
         {
-            Console.WriteLine($"Vehicle Details for Bike:");
+            Console.WriteLine($"Vehicle Details for Bus:");
 
             foreach (var vehicle in matchingVehicles)
             {
@@ -56,14 +60,14 @@ public class Bike : IVehicles
         }
         else
         {
-            Console.WriteLine($"No vehicles found for Bike.");
+            Console.WriteLine($"No vehicles found for Bus.");
         }
     }
 
 
     private List<Vehicle> LoadVehicles()
     {
-        string vehicleFilePath = "/Users/ATIFHANIF/Projects/trans/Bikes.json";
+        string vehicleFilePath = "/Users/ATIFHANIF/Projects/trans/Buses.json";
 
         if (File.Exists(vehicleFilePath))
         {
@@ -78,7 +82,7 @@ public class Bike : IVehicles
     public Vehicle AssignVehicle()
     {
         List<Vehicle> allVehicles = LoadVehicles();
-        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Bike" && v.Status == "Available");
+        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Bus" && v.Status == "Available");
         //Vehicle availableVehicle = vehicles.Find(v => v.Type == vehicleType && v.Status == "Available");
 
         if (availableVehicle != null)
