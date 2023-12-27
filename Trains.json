@@ -1,0 +1,59 @@
+[
+  {
+    "Id": "TR004",
+    "Type": "Train",
+    "Model": "Local",
+    "NumberPlate": "GHI567",
+    "DriverName": "Engineer Black",
+    "Status": "Scheduled",
+    "DepartureDateTime": "2023-12-28T10:30:00",
+    "TotalSeats": 120,
+    "AvailableSeats": 60
+  },
+  {
+    "Id": "TR005",
+    "Type": "Train",
+    "Model": "High-Speed",
+    "NumberPlate": "JKL890",
+    "DriverName": "Captain Grey",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-28T12:45:00",
+    "TotalSeats": 200,
+    "AvailableSeats": 100
+  },
+  {
+    "Id": "TR006",
+    "Type": "Train",
+    "Model": "Express",
+    "NumberPlate": "MNO123",
+    "DriverName": "Engineer Red",
+    "Status": "In Repair",
+    "DepartureDateTime": "2023-12-28T15:00:00",
+    "TotalSeats": 150,
+    "AvailableSeats": 0
+  },
+  {
+    "Id": "TR007",
+    "Type": "Train",
+    "Model": "Local",
+    "NumberPlate": "PQR456",
+    "DriverName": "Captain Blue",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-29T09:45:00",
+    "TotalSeats": 120,
+    "AvailableSeats": 40
+  },
+  {
+    "Id": "TR008",
+    "Type": "Train",
+    "Model": "High-Speed",
+    "NumberPlate": "ABC789",
+    "DriverName": "Engineer Yellow",
+    "Status": "In Maintenance",
+    "DepartureDateTime": "2023-12-29T09:45:00"
+    "TotalSeats": 120,
+    "AvailableSeats": 40
+}
+
+
+]

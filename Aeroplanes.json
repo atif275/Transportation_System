@@ -1,0 +1,79 @@
+[
+  {
+    "Id": "A004",
+    "Type": "Aeroplane",
+    "Model": "Boeing 777",
+    "NumberPlate": "DEF234",
+    "DriverName": "Pilot White",
+    "Status": "Scheduled",
+    "DepartureDateTime": "2023-12-28T12:30:00",
+    "TotalSeats": 250,
+    "AvailableSeats": 100
+  },
+  {
+    "Id": "A005",
+    "Type": "Aeroplane",
+    "Model": "Airbus A380",
+    "NumberPlate": "GHI567",
+    "DriverName": "Captain Green",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-28T14:45:00",
+    "TotalSeats": 300,
+    "AvailableSeats": 150
+  },
+  {
+    "Id": "A006",
+    "Type": "Aeroplane",
+    "Model": "Cessna 208",
+    "NumberPlate": "JKL901",
+    "DriverName": "Pilot Davis",
+    "Status": "In Repair",
+    "DepartureDateTime": "2023-12-28T18:00:00",
+    "TotalSeats": 8,
+    "AvailableSeats": 0
+  },
+  {
+    "Id": "A007",
+    "Type": "Aeroplane",
+    "Model": "Embraer E190",
+    "NumberPlate": "MNO234",
+    "DriverName": "Captain Brown",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-29T09:30:00",
+    "TotalSeats": 100,
+    "AvailableSeats": 50
+  },
+  {
+    "Id": "A008",
+    "Type": "Aeroplane",
+    "Model": "Bombardier CRJ900",
+    "NumberPlate": "PQR567",
+    "DriverName": "Pilot Smith",
+    "Status": "In Service",
+    "DepartureDateTime": "2023-12-29T11:45:00",
+    "TotalSeats": 90,
+    "AvailableSeats": 30
+  },
+  {
+    "Id": "A009",
+    "Type": "Aeroplane",
+    "Model": "Airbus A320",
+    "NumberPlate": "ABC890",
+    "DriverName": "Captain Johnson",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-29T15:00:00",
+    "TotalSeats": 200,
+    "AvailableSeats": 100
+  },
+  {
+    "Id": "A010",
+    "Type": "Aeroplane",
+    "Model": "Boeing 747",
+    "NumberPlate": "LMN123",
+    "DriverName": "Pilot Miller",
+    "Status": "In Repair",
+    "DepartureDateTime": "2023-12-29T17:15:00",
+    "TotalSeats": 300,
+    "AvailableSeats": 0
+  }
+]

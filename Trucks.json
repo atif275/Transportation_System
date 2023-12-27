@@ -1,0 +1,79 @@
+[
+  {
+    "Id": "T004",
+    "Type": "Truck",
+    "Model": "Box Truck",
+    "NumberPlate": "JKL567",
+    "DriverName": "Lily Hauler",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-28T18:45:00",
+    "TotalSeats": 3,
+    "AvailableSeats": 1
+  },
+  {
+    "Id": "T005",
+    "Type": "Truck",
+    "Model": "Flatbed",
+    "NumberPlate": "MNO890",
+    "DriverName": "Mike Hauler",
+    "Status": "In Transit",
+    "DepartureDateTime": "2023-12-28T21:00:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 0
+  },
+  {
+    "Id": "T006",
+    "Type": "Truck",
+    "Model": "Refrigerated",
+    "NumberPlate": "PQR123",
+    "DriverName": "Ryan Hauler",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-29T09:15:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 2
+  },
+  {
+    "Id": "T007",
+    "Type": "Truck",
+    "Model": "Box Truck",
+    "NumberPlate": "ABC456",
+    "DriverName": "Emma Hauler",
+    "Status": "In Repair",
+    "DepartureDateTime": "2023-12-29T11:30:00",
+    "TotalSeats": 3,
+    "AvailableSeats": 0
+  },
+  {
+    "Id": "T008",
+    "Type": "Truck",
+    "Model": "Flatbed",
+    "NumberPlate": "DEF789",
+    "DriverName": "David Hauler",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-29T13:45:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 1
+  },
+  {
+    "Id": "T009",
+    "Type": "Truck",
+    "Model": "Refrigerated",
+    "NumberPlate": "GHI012",
+    "DriverName": "Grace Hauler",
+    "Status": "In Maintenance",
+    "DepartureDateTime": "2023-12-29T16:00:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 0
+  },
+  {
+    "Id": "T010",
+    "Type": "Truck",
+    "Model": "Box Truck",
+    "NumberPlate": "LMN345",
+    "DriverName": "Leo Hauler",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-29T18:15:00",
+    "TotalSeats": 3,
+    "AvailableSeats": 2
+  }
+]
