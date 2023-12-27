@@ -66,8 +66,7 @@ public class Bike : IVehicles
 
     private List<Vehicle> LoadVehicles()
     {
-        string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Bikes.json";
-
+        string vehicleFilePath = Path.Combine(GetProjectDirectory(), "database", "Bikes.json");
         if (File.Exists(vehicleFilePath))
         {
             string vehicleJson = File.ReadAllText(vehicleFilePath);
@@ -91,6 +90,22 @@ public class Bike : IVehicles
         }
 
         return null;
+    }
+    static string GetProjectDirectory()
+    {
+        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        return RemoveBinDebugFromPath(baseDirectory);
+    }
+
+    // Helper method to remove "bin/Debug/net7.0" from the path
+    static string RemoveBinDebugFromPath(string path)
+    {
+        int binDebugIndex = path.IndexOf("bin/Debug/net7.0", StringComparison.OrdinalIgnoreCase);
+        if (binDebugIndex >= 0)
+        {
+            return path.Substring(0, binDebugIndex);
+        }
+        return path;
     }
 }
 

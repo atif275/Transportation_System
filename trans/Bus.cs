@@ -70,12 +70,11 @@ public class Bus : IVehicles
 
     private List<Vehicle> LoadVehicles()
     {
-    //    string currentDirectory = Directory.GetCurrentDirectory();
-    //    string filePath = Path.Combine("..", "Buses.json");
-    //    // Get the full path by combining with the current directory
-    //    string fullPath = Path.Combine(currentDirectory, filePath);
-        string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Buses.json";
-
+        //    string currentDirectory = Directory.GetCurrentDirectory();
+        //    string filePath = Path.Combine("..", "Buses.json");
+        //    // Get the full path by combining with the current directory
+        //    string fullPath = Path.Combine(currentDirectory, filePath);
+        string vehicleFilePath = Path.Combine(GetProjectDirectory(), "database", "Buses.json");
         if (File.Exists(vehicleFilePath))
         {
             string vehicleJson = File.ReadAllText(vehicleFilePath);
@@ -99,6 +98,22 @@ public class Bus : IVehicles
         }
 
         return null;
+    }
+    static string GetProjectDirectory()
+    {
+        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        return RemoveBinDebugFromPath(baseDirectory);
+    }
+
+    // Helper method to remove "bin/Debug/net7.0" from the path
+    static string RemoveBinDebugFromPath(string path)
+    {
+        int binDebugIndex = path.IndexOf("bin/Debug/net7.0", StringComparison.OrdinalIgnoreCase);
+        if (binDebugIndex >= 0)
+        {
+            return path.Substring(0, binDebugIndex);
+        }
+        return path;
     }
 }
 

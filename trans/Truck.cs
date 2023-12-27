@@ -70,8 +70,7 @@ public class Truck : IVehicles
 
     private List<Vehicle> LoadVehicles()
     {
-        string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Trucks.json";
-
+        string vehicleFilePath = Path.Combine(GetProjectDirectory(), "database", "Trucks.json");
         if (File.Exists(vehicleFilePath))
         {
             string vehicleJson = File.ReadAllText(vehicleFilePath);
@@ -95,6 +94,22 @@ public class Truck : IVehicles
         }
 
         return null;
+    }
+    static string GetProjectDirectory()
+    {
+        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        return RemoveBinDebugFromPath(baseDirectory);
+    }
+
+    // Helper method to remove "bin/Debug/net7.0" from the path
+    static string RemoveBinDebugFromPath(string path)
+    {
+        int binDebugIndex = path.IndexOf("bin/Debug/net7.0", StringComparison.OrdinalIgnoreCase);
+        if (binDebugIndex >= 0)
+        {
+            return path.Substring(0, binDebugIndex);
+        }
+        return path;
     }
 }
 

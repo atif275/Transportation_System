@@ -4,19 +4,49 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Net.Sockets;
 using System.Text;
-
-
+using System.Reflection;
 class Program
 {
-    static string customerFilePath = "/Users/ATIFHANIF/Projects/trans/customers.json";
-    static string bookingFilePath = "/Users/ATIFHANIF/Projects/trans/bookings.json";
-    static string vehicleFilePath = "/Users/ATIFHANIF/Projects/trans/vehicles.json";
 
+
+
+    //static string customerFilePath = "/database/customers.json";
+    //static string bookingFilePath = "/database/bookings.json";
+    ////static string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/vehicles.json";
+
+    
+    
+    static string customerFileName = "customers.json";
+    static string bookingFileName = "bookings.json";
+    //static string vehicleFileName = "vehicles.json";
+
+    // Use Path.Combine to construct the full paths
+    static string customerFilePath = Path.Combine(GetProjectDirectory(), "database", customerFileName);
+    static string bookingFilePath = Path.Combine(GetProjectDirectory(), "database", bookingFileName);
+    //static string vehicleFilePath = Path.Combine(GetProjectDirectory(), "vehicles.json");
     static List<Customer> customers = new List<Customer>();
     static List<Booking> bookings = new List<Booking>();
     //static List<Vehicle> vehicles = new List<Vehicle>();
 
     static Customer loggedInCustomer;
+
+    static string GetProjectDirectory()
+    {
+        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        return RemoveBinDebugFromPath(baseDirectory);
+    }
+
+    // Helper method to remove "bin/Debug/net7.0" from the path
+    static string RemoveBinDebugFromPath(string path)
+    {
+        int binDebugIndex = path.IndexOf("bin/Debug/net7.0", StringComparison.OrdinalIgnoreCase);
+        if (binDebugIndex >= 0)
+        {
+            return path.Substring(0, binDebugIndex);
+        }
+        return path;
+    }
+
 
     static void LoadData()
     {
@@ -62,16 +92,22 @@ class Program
 
     static void Main()
     {
+        int i = 1;
 
 
         LoadData();
 
         while (true)
         {
+            if (i == 0)
+            {
+                SaveData();
+            }
             Console.WriteLine("1. Sign Up");
             Console.WriteLine("2. Log In");
             Console.WriteLine("3. Administrator Log In");
             Console.WriteLine("4. Exit");
+            i = 0;
 
             int choice = GetIntInput("Enter your choice: ");
 
@@ -240,7 +276,8 @@ class Program
             string arrivalDestination = Console.ReadLine();
             int numberOfPassengers = GetIntInput("Enter the number of passengers: ");
             DateTime departureDateTime = GetDateTimeInput("Enter departure date and time (yyyy-MM-dd HH:mm): ");
-
+            IVehicles Type = VehiclesFactory.getVahicles(vehicleTypeChoice);
+            Vehicle assignedVehicle = Type.AssignVehicle();
             decimal estimatedFare = GenerateRandomFare();
             Console.WriteLine($"Estimated Fare: Rs. {estimatedFare}");
 
@@ -268,8 +305,8 @@ class Program
                 bookings.Add(newBooking);
 
                 //Vehicle assignedVehicle = AssignVehicle(vehicleType);
-                IVehicles Type = VehiclesFactory.getVahicles(vehicleTypeChoice);
-                Vehicle assignedVehicle = Type.AssignVehicle();
+                //IVehicles Type = VehiclesFactory.getVahicles(vehicleTypeChoice);
+                //Vehicle assignedVehicle = Type.AssignVehicle();
                 if (assignedVehicle != null)
                 {
                     Console.WriteLine("Booking confirmed successfully. Here is your booking slip:");
