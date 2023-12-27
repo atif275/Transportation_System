@@ -1,5 +1,6 @@
 [
   {
+
     "Id": "B001",
     "Type": "Bike",
     "Model": "Sport",
@@ -40,6 +41,7 @@
     "DriverName": "Dylan Biker",
     "Status": "Available",
     "DepartureDateTime": "2023-12-30T13:00:00",
+
     "TotalSeats": 1,
     "AvailableSeats": 1
   },
@@ -66,6 +68,7 @@
     "AvailableSeats": 2
   },
   {
+
     "Id": "B007",
     "Type": "Bike",
     "Model": "Sport",
@@ -77,6 +80,7 @@
     "AvailableSeats": 0
   },
   {
+
     "Id": "B008",
     "Type": "Bike",
     "Model": "Cruiser",
@@ -88,6 +92,7 @@
     "AvailableSeats": 1
   },
   {
+
     "Id": "B009",
     "Type": "Bike",
     "Model": "Touring",
@@ -108,5 +113,6 @@
     "DepartureDateTime": "2023-12-31T15:30:00",
     "TotalSeats": 1,
     "AvailableSeats": 1
+
   }
 ]

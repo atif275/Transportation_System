@@ -1,5 +1,6 @@
 [
   {
+
     "Id": "TR011",
     "Type": "Train",
     "Model": "High-Speed",
@@ -18,10 +19,12 @@
     "DriverName": "Captain Bella",
     "Status": "Available",
     "DepartureDateTime": "2023-12-30T09:30:00",
+
     "TotalSeats": 120,
     "AvailableSeats": 60
   },
   {
+
     "Id": "TR013",
     "Type": "Train",
     "Model": "Express",
@@ -51,10 +54,12 @@
     "DriverName": "Engineer Eva",
     "Status": "Available",
     "DepartureDateTime": "2023-12-30T15:00:00",
+
     "TotalSeats": 200,
     "AvailableSeats": 100
   },
   {
+
     "Id": "TR016",
     "Type": "Train",
     "Model": "Express",
@@ -109,4 +114,5 @@
     "TotalSeats": 120,
     "AvailableSeats": 50
   }
+
 ]

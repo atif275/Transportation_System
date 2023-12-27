@@ -1,5 +1,6 @@
 [
   {
+
     "Id": "C011",
     "Type": "Car",
     "Model": "Compact",
@@ -11,6 +12,7 @@
     "AvailableSeats": 3
   },
   {
+
     "Id": "C012",
     "Type": "Car",
     "Model": "SUV",
@@ -77,6 +79,7 @@
     "AvailableSeats": 2
   },
   {
+
     "Id": "C018",
     "Type": "Car",
     "Model": "Compact",
@@ -108,5 +111,6 @@
     "DepartureDateTime": "2023-12-31T15:30:00",
     "TotalSeats": 2,
     "AvailableSeats": 1
+
   }
 ]

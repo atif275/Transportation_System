@@ -1,5 +1,6 @@
 [
   {
+
     "Id": "A011",
     "Type": "Aeroplane",
     "Model": "Boeing 737",
@@ -44,6 +45,7 @@
     "AvailableSeats": 150
   },
   {
+
     "Id": "A015",
     "Type": "Aeroplane",
     "Model": "Airbus A380",
@@ -108,5 +110,6 @@
     "DepartureDateTime": "2023-12-31T15:30:00",
     "TotalSeats": 300,
     "AvailableSeats": 150
+
   }
 ]
