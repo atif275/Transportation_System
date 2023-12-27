@@ -51,6 +51,9 @@ public class Aeroplane : IVehicles
                 Console.WriteLine($"Number Plate: {vehicle.NumberPlate}");
                 Console.WriteLine($"Driver Name: {vehicle.DriverName}");
                 Console.WriteLine($"Status: {vehicle.Status}");
+                Console.WriteLine($"Departure DateTime: {vehicle.DepartureDateTime}");
+                Console.WriteLine($"Total Seats: {vehicle.TotalSeats}");
+                Console.WriteLine($"Available Seats: {vehicle.AvailableSeats}");
                 Console.WriteLine();
             }
         }
