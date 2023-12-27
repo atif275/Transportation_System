@@ -63,7 +63,7 @@ public class Aeroplane : IVehicles
 
     private List<Vehicle> LoadVehicles()
     {
-        string vehicleFilePath = "/Users/ATIFHANIF/Projects/trans/Aeroplanes.json";
+        string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Buses.json";
 
         if (File.Exists(vehicleFilePath))
         {
@@ -83,7 +83,7 @@ public class Aeroplane : IVehicles
 
         if (availableVehicle != null)
         {
-            availableVehicle.Status = "Not Available";
+            availableVehicle.Status = "Assigned";
             return availableVehicle;
         }
 

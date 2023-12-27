@@ -67,7 +67,11 @@ public class Bus : IVehicles
 
     private List<Vehicle> LoadVehicles()
     {
-        string vehicleFilePath = "/Users/ATIFHANIF/Projects/trans/Buses.json";
+    //    string currentDirectory = Directory.GetCurrentDirectory();
+    //    string filePath = Path.Combine("..", "Buses.json");
+    //    // Get the full path by combining with the current directory
+    //    string fullPath = Path.Combine(currentDirectory, filePath);
+        string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Buses.json";
 
         if (File.Exists(vehicleFilePath))
         {
@@ -87,7 +91,7 @@ public class Bus : IVehicles
 
         if (availableVehicle != null)
         {
-            availableVehicle.Status = "Not Available";
+            availableVehicle.Status = "Assigned";
             return availableVehicle;
         }
 

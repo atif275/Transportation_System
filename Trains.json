@@ -1,0 +1,112 @@
+[
+  {
+    "Id": "TR011",
+    "Type": "Train",
+    "Model": "High-Speed",
+    "NumberPlate": "XYZ123",
+    "DriverName": "Engineer Alex",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T08:00:00",
+    "TotalSeats": 200,
+    "AvailableSeats": 100
+  },
+  {
+    "Id": "TR012",
+    "Type": "Train",
+    "Model": "Local",
+    "NumberPlate": "ABC456",
+    "DriverName": "Captain Bella",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T09:30:00",
+    "TotalSeats": 120,
+    "AvailableSeats": 60
+  },
+  {
+    "Id": "TR013",
+    "Type": "Train",
+    "Model": "Express",
+    "NumberPlate": "PQR789",
+    "DriverName": "Engineer Chris",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T11:00:00",
+    "TotalSeats": 150,
+    "AvailableSeats": 75
+  },
+  {
+    "Id": "TR014",
+    "Type": "Train",
+    "Model": "Local",
+    "NumberPlate": "LMN012",
+    "DriverName": "Captain Dylan",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T13:00:00",
+    "TotalSeats": 120,
+    "AvailableSeats": 50
+  },
+  {
+    "Id": "TR015",
+    "Type": "Train",
+    "Model": "High-Speed",
+    "NumberPlate": "GHI345",
+    "DriverName": "Engineer Eva",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T15:00:00",
+    "TotalSeats": 200,
+    "AvailableSeats": 100
+  },
+  {
+    "Id": "TR016",
+    "Type": "Train",
+    "Model": "Express",
+    "NumberPlate": "JKL678",
+    "DriverName": "Captain Felix",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T17:00:00",
+    "TotalSeats": 150,
+    "AvailableSeats": 75
+  },
+  {
+    "Id": "TR017",
+    "Type": "Train",
+    "Model": "Local",
+    "NumberPlate": "DEF901",
+    "DriverName": "Engineer Gina",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T09:30:00",
+    "TotalSeats": 120,
+    "AvailableSeats": 60
+  },
+  {
+    "Id": "TR018",
+    "Type": "Train",
+    "Model": "High-Speed",
+    "NumberPlate": "MNO234",
+    "DriverName": "Captain Harry",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T11:30:00",
+    "TotalSeats": 200,
+    "AvailableSeats": 100
+  },
+  {
+    "Id": "TR019",
+    "Type": "Train",
+    "Model": "Express",
+    "NumberPlate": "PQR567",
+    "DriverName": "Engineer Ivy",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T13:30:00",
+    "TotalSeats": 150,
+    "AvailableSeats": 75
+  },
+  {
+    "Id": "TR020",
+    "Type": "Train",
+    "Model": "Local",
+    "NumberPlate": "ABC890",
+    "DriverName": "Captain Jack",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T15:30:00",
+    "TotalSeats": 120,
+    "AvailableSeats": 50
+  }
+]

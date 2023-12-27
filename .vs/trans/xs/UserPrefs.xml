@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.trans PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.trans PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="trans/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="trans/Truck.cs">
     <Files>
       <File FileName="trans/Program.cs" Line="375" Column="1" />
       <File FileName="trans/Train.cs" />
@@ -16,14 +16,13 @@
       <File FileName="trans/Aeroplane.cs" />
       <File FileName="trans/Car.cs" />
       <File FileName="trans/Customer.cs" />
+      <File FileName="trans/Truck.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="trans">
-            <Node name="trans">
-              <Node name="Program.cs" selected="True" />
-            </Node>
+          <Node name="trans" expanded="True">
+            <Node name="trans" expanded="True" />
           </Node>
         </State>
       </Pad>

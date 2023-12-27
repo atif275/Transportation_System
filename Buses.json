@@ -1,0 +1,112 @@
+[
+  {
+    "Id": "B011",
+    "Type": "Bus",
+    "Model": "Double-Decker",
+    "NumberPlate": "XYZ123",
+    "DriverName": "Alex Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T08:00:00",
+    "TotalSeats": 60,
+    "AvailableSeats": 40
+  },
+  {
+    "Id": "B012",
+    "Type": "Bus",
+    "Model": "Coach",
+    "NumberPlate": "ABC456",
+    "DriverName": "Bella Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T09:30:00",
+    "TotalSeats": 50,
+    "AvailableSeats": 20
+  },
+  {
+    "Id": "B013",
+    "Type": "Bus",
+    "Model": "Mini Bus",
+    "NumberPlate": "PQR789",
+    "DriverName": "Chris Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T11:00:00",
+    "TotalSeats": 20,
+    "AvailableSeats": 10
+  },
+  {
+    "Id": "B014",
+    "Type": "Bus",
+    "Model": "Double-Decker",
+    "NumberPlate": "LMN012",
+    "DriverName": "Dylan Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T13:00:00",
+    "TotalSeats": 60,
+    "AvailableSeats": 30
+  },
+  {
+    "Id": "B015",
+    "Type": "Bus",
+    "Model": "Coach",
+    "NumberPlate": "GHI345",
+    "DriverName": "Eva Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T15:00:00",
+    "TotalSeats": 50,
+    "AvailableSeats": 25
+  },
+  {
+    "Id": "B016",
+    "Type": "Bus",
+    "Model": "Mini Bus",
+    "NumberPlate": "JKL678",
+    "DriverName": "Felix Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T17:00:00",
+    "TotalSeats": 20,
+    "AvailableSeats": 15
+  },
+  {
+    "Id": "B017",
+    "Type": "Bus",
+    "Model": "Double-Decker",
+    "NumberPlate": "DEF901",
+    "DriverName": "Gina Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T09:30:00",
+    "TotalSeats": 60,
+    "AvailableSeats": 40
+  },
+  {
+    "Id": "B018",
+    "Type": "Bus",
+    "Model": "Coach",
+    "NumberPlate": "MNO234",
+    "DriverName": "Harry Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T11:30:00",
+    "TotalSeats": 50,
+    "AvailableSeats": 20
+  },
+  {
+    "Id": "B019",
+    "Type": "Bus",
+    "Model": "Mini Bus",
+    "NumberPlate": "PQR567",
+    "DriverName": "Ivy Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T13:30:00",
+    "TotalSeats": 20,
+    "AvailableSeats": 10
+  },
+  {
+    "Id": "B020",
+    "Type": "Bus",
+    "Model": "Double-Decker",
+    "NumberPlate": "ABC890",
+    "DriverName": "Jack Busdriver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T15:30:00",
+    "TotalSeats": 60,
+    "AvailableSeats": 30
+  }
+]

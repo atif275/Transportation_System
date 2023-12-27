@@ -1,0 +1,112 @@
+[
+  {
+    "Id": "C011",
+    "Type": "Car",
+    "Model": "Compact",
+    "NumberPlate": "XYZ123",
+    "DriverName": "Alice Driver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T08:00:00",
+    "TotalSeats": 4,
+    "AvailableSeats": 3
+  },
+  {
+    "Id": "C012",
+    "Type": "Car",
+    "Model": "SUV",
+    "NumberPlate": "ABC456",
+    "DriverName": "Bob Smith",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T09:30:00",
+    "TotalSeats": 6,
+    "AvailableSeats": 6
+  },
+  {
+    "Id": "C013",
+    "Type": "Car",
+    "Model": "Electric",
+    "NumberPlate": "PQR789",
+    "DriverName": "Chris Driver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T11:00:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 1
+  },
+  {
+    "Id": "C014",
+    "Type": "Car",
+    "Model": "Convertible",
+    "NumberPlate": "LMN012",
+    "DriverName": "David Tesla",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T13:00:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 2
+  },
+  {
+    "Id": "C015",
+    "Type": "Car",
+    "Model": "Hatchback",
+    "NumberPlate": "GHI345",
+    "DriverName": "Emma Rider",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T15:00:00",
+    "TotalSeats": 4,
+    "AvailableSeats": 3
+  },
+  {
+    "Id": "C016",
+    "Type": "Car",
+    "Model": "Sedan",
+    "NumberPlate": "JKL678",
+    "DriverName": "Frank Driver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T17:00:00",
+    "TotalSeats": 5,
+    "AvailableSeats": 5
+  },
+  {
+    "Id": "C017",
+    "Type": "Car",
+    "Model": "Sport",
+    "NumberPlate": "DEF901",
+    "DriverName": "Grace Smith",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T09:30:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 2
+  },
+  {
+    "Id": "C018",
+    "Type": "Car",
+    "Model": "Compact",
+    "NumberPlate": "MNO234",
+    "DriverName": "Henry Driver",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T11:30:00",
+    "TotalSeats": 4,
+    "AvailableSeats": 4
+  },
+  {
+    "Id": "C019",
+    "Type": "Car",
+    "Model": "SUV",
+    "NumberPlate": "PQR567",
+    "DriverName": "Ivy SUV",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T13:30:00",
+    "TotalSeats": 6,
+    "AvailableSeats": 6
+  },
+  {
+    "Id": "C020",
+    "Type": "Car",
+    "Model": "Electric",
+    "NumberPlate": "ABC890",
+    "DriverName": "Jack Tesla",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T15:30:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 1
+  }
+]

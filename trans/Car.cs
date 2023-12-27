@@ -64,9 +64,9 @@ using Newtonsoft.Json;
 
         private List<Vehicle> LoadVehicles()
         {
-            string vehicleFilePath = "/Users/ATIFHANIF/Projects/trans/Cars.json";
+        string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Buses.json";
 
-            if (File.Exists(vehicleFilePath))
+        if (File.Exists(vehicleFilePath))
             {
                 string vehicleJson = File.ReadAllText(vehicleFilePath);
                 return JsonConvert.DeserializeObject<List<Vehicle>>(vehicleJson);
@@ -84,7 +84,7 @@ using Newtonsoft.Json;
 
             if (availableVehicle != null)
             {
-                availableVehicle.Status = "Not Available";
+                availableVehicle.Status = "Assigned";
                 return availableVehicle;
             }
 
