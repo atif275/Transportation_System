@@ -1,79 +1,118 @@
 [
   {
-    "Id": "B004",
-    "Type": "Bike",
-    "Model": "Touring",
-    "NumberPlate": "ABC456",
-    "DriverName": "Tony Rider",
-    "Status": "In Repair",
-    "DepartureDateTime": "2023-12-28T10:00:00",
-    "TotalSeats": 2,
-    "AvailableSeats": 0
-  },
-  {
-    "Id": "B005",
+
+    "Id": "B001",
     "Type": "Bike",
     "Model": "Sport",
-    "NumberPlate": "DEF789",
-    "DriverName": "Sophia Biker",
+    "NumberPlate": "XYZ123",
+    "DriverName": "Alex Rider",
     "Status": "Available",
-    "DepartureDateTime": "2023-12-28T12:15:00",
+    "DepartureDateTime": "2023-12-30T08:00:00",
     "TotalSeats": 1,
     "AvailableSeats": 1
   },
   {
-    "Id": "B006",
+    "Id": "B002",
     "Type": "Bike",
     "Model": "Cruiser",
-    "NumberPlate": "GHI012",
-    "DriverName": "George Rider",
-    "Status": "In Service",
-    "DepartureDateTime": "2023-12-28T14:30:00",
-    "TotalSeats": 1,
-    "AvailableSeats": 1
-  },
-  {
-    "Id": "B007",
-    "Type": "Bike",
-    "Model": "Touring",
-    "NumberPlate": "JKL345",
-    "DriverName": "Tina Biker",
+    "NumberPlate": "ABC456",
+    "DriverName": "Bella Biker",
     "Status": "Available",
-    "DepartureDateTime": "2023-12-29T09:45:00",
+    "DepartureDateTime": "2023-12-30T09:30:00",
     "TotalSeats": 2,
     "AvailableSeats": 2
   },
   {
-    "Id": "B008",
+    "Id": "B003",
     "Type": "Bike",
-    "Model": "Sport",
-    "NumberPlate": "MNO678",
-    "DriverName": "Tim Rider",
-    "Status": "In Maintenance",
-    "DepartureDateTime": "2023-12-29T12:00:00",
+    "Model": "Touring",
+    "NumberPlate": "PQR789",
+    "DriverName": "Chris Rider",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T11:00:00",
     "TotalSeats": 1,
     "AvailableSeats": 0
   },
   {
-    "Id": "B009",
+    "Id": "B004",
     "Type": "Bike",
-    "Model": "Cruiser",
-    "NumberPlate": "PQR901",
-    "DriverName": "Tracy Biker",
+    "Model": "Sport",
+    "NumberPlate": "LMN012",
+    "DriverName": "Dylan Biker",
     "Status": "Available",
-    "DepartureDateTime": "2023-12-29T14:15:00",
+    "DepartureDateTime": "2023-12-30T13:00:00",
+
     "TotalSeats": 1,
     "AvailableSeats": 1
+  },
+  {
+    "Id": "B005",
+    "Type": "Bike",
+    "Model": "Cruiser",
+    "NumberPlate": "GHI345",
+    "DriverName": "Eva Rider",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T15:00:00",
+    "TotalSeats": 1,
+    "AvailableSeats": 0
+  },
+  {
+    "Id": "B006",
+    "Type": "Bike",
+    "Model": "Touring",
+    "NumberPlate": "JKL678",
+    "DriverName": "Felix Biker",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-30T17:00:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 2
+  },
+  {
+
+    "Id": "B007",
+    "Type": "Bike",
+    "Model": "Sport",
+    "NumberPlate": "DEF901",
+    "DriverName": "Gina Rider",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T09:30:00",
+    "TotalSeats": 1,
+    "AvailableSeats": 0
+  },
+  {
+
+    "Id": "B008",
+    "Type": "Bike",
+    "Model": "Cruiser",
+    "NumberPlate": "MNO234",
+    "DriverName": "Harry Biker",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T11:30:00",
+    "TotalSeats": 1,
+    "AvailableSeats": 1
+  },
+  {
+
+    "Id": "B009",
+    "Type": "Bike",
+    "Model": "Touring",
+    "NumberPlate": "PQR567",
+    "DriverName": "Ivy Rider",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T13:30:00",
+    "TotalSeats": 2,
+    "AvailableSeats": 0
   },
   {
     "Id": "B010",
     "Type": "Bike",
     "Model": "Sport",
-    "NumberPlate": "LMN234",
-    "DriverName": "Tom Rider",
-    "Status": "In Repair",
-    "DepartureDateTime": "2023-12-29T16:30:00",
+    "NumberPlate": "ABC890",
+    "DriverName": "Jack Biker",
+    "Status": "Available",
+    "DepartureDateTime": "2023-12-31T15:30:00",
     "TotalSeats": 1,
-    "AvailableSeats": 0
+    "AvailableSeats": 1
+
   }
 ]

@@ -1,31 +1,94 @@
 ﻿using System;
+using Newtonsoft.Json;
 
-    public class Bike : Vehicle
+public class Bike : IVehicles
+{
+    public string Id { get; set; }
+    public string Type { get; set; }
+    public string Model { get; set; }
+    public string NumberPlate { get; set; }
+    public string DriverName { get; set; }
+    public string Status { get; set; }
+    public DateTime DepartureDateTime { get; set; }
+    public int TotalSeats { get; set; }
+    public int AvailableSeats { get; set; }
+
+    /* public void PrintDetails()
+     {
+         Console.WriteLine($"Type: {Type}, Model: {Model}, Number Plate: {NumberPlate}, Driver: {DriverName}, Status: {Status}");
+     }
+
+     public void Assign(string customerId)
+     {
+         // Implement the logic for assigning a car to a customer
+         Console.WriteLine($"Car assigned to Customer {customerId}");
+         Status = "Not Available";
+     }*/
+
+    public int GetAvailableCount()
     {
-        public string Id { get; set; }
-        public string Type { get; set; }
-        public string Model { get; set; }
-        public string NumberPlate { get; set; }
-        public string DriverName { get; set; }
-        public string Status { get; set; }
+        // Implement the logic to get the count of available cars
+        List<Vehicle> allVehicles = LoadVehicles();
+        return allVehicles.Count(v => v.Type == "Bike" && v.Status == "Available");
+    }
+    public void ViewVehicleDetailsByType()
+    {
+        // Read existing vehicles from the file
+        List<Vehicle> allVehicles = LoadVehicles();
 
-        public void PrintDetails()
+        // Filter vehicles by the provided type
+        List<Vehicle> matchingVehicles = allVehicles.Where(v => v.Type == "bike").ToList();
+
+        if (matchingVehicles.Count > 0)
         {
-            Console.WriteLine($"Type: {Type}, Model: {Model}, Number Plate: {NumberPlate}, Driver: {DriverName}, Status: {Status}");
+            Console.WriteLine($"Vehicle Details for Bike:");
+
+            foreach (var vehicle in matchingVehicles)
+            {
+                Console.WriteLine($"Vehicle ID: {vehicle.Id}");
+                Console.WriteLine($"Type: {vehicle.Type}");
+                Console.WriteLine($"Model: {vehicle.Model}");
+                Console.WriteLine($"Number Plate: {vehicle.NumberPlate}");
+                Console.WriteLine($"Driver Name: {vehicle.DriverName}");
+                Console.WriteLine($"Status: {vehicle.Status}");
+                Console.WriteLine();
+            }
         }
-
-        public void Assign(string customerId)
+        else
         {
-            // Implement the logic for assigning a bike to a customer
-            Console.WriteLine($"Bike assigned to Customer {customerId}");
-            Status = "Not Available";
-        }
-
-        public int GetAvailableCount(List<Vehicle> allVehicles)
-        {
-            // Implement the logic to get the count of available bikes
-            return allVehicles.Count(v => v.Type == "Bike" && v.Status == "Available");
+            Console.WriteLine($"No vehicles found for Bike.");
         }
     }
+
+
+    private List<Vehicle> LoadVehicles()
+    {
+        string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Buses.json";
+
+        if (File.Exists(vehicleFilePath))
+        {
+            string vehicleJson = File.ReadAllText(vehicleFilePath);
+            return JsonConvert.DeserializeObject<List<Vehicle>>(vehicleJson);
+        }
+
+        return new List<Vehicle>();
+    }
+
+
+    public Vehicle AssignVehicle()
+    {
+        List<Vehicle> allVehicles = LoadVehicles();
+        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Bike" && v.Status == "Available");
+        //Vehicle availableVehicle = vehicles.Find(v => v.Type == vehicleType && v.Status == "Available");
+
+        if (availableVehicle != null)
+        {
+            availableVehicle.Status = "Assigned";
+            return availableVehicle;
+        }
+
+        return null;
+    }
+}
 
 

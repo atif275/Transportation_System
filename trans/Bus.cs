@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-public class Aeroplane : IVehicles
+public class Bus : IVehicles
 {
     public string Id { get; set; }
     public string Type { get; set; }
@@ -12,6 +12,7 @@ public class Aeroplane : IVehicles
     public DateTime DepartureDateTime { get; set; }
     public int TotalSeats { get; set; }
     public int AvailableSeats { get; set; }
+
 
     /* public void PrintDetails()
      {
@@ -29,19 +30,22 @@ public class Aeroplane : IVehicles
     {
         // Implement the logic to get the count of available cars
         List<Vehicle> allVehicles = LoadVehicles();
-        return allVehicles.Count(v => v.Type == "Aeroplane" && v.Status == "Available");
+        return allVehicles.Count(v => v.Type == "Bus" && v.Status == "Available");
     }
+
+
+
     public void ViewVehicleDetailsByType()
     {
         // Read existing vehicles from the file
         List<Vehicle> allVehicles = LoadVehicles();
 
         // Filter vehicles by the provided type
-        List<Vehicle> matchingVehicles = allVehicles.Where(v => v.Type == "Aeroplane").ToList();
+        List<Vehicle> matchingVehicles = allVehicles.Where(v => v.Type == "Bus").ToList();
 
         if (matchingVehicles.Count > 0)
         {
-            Console.WriteLine($"Vehicle Details for Aeroplane:");
+            Console.WriteLine($"Vehicle Details for Bus:");
 
             foreach (var vehicle in matchingVehicles)
             {
@@ -56,13 +60,17 @@ public class Aeroplane : IVehicles
         }
         else
         {
-            Console.WriteLine($"No vehicles found for Aeroplane.");
+            Console.WriteLine($"No vehicles found for Bus.");
         }
     }
 
 
     private List<Vehicle> LoadVehicles()
     {
+    //    string currentDirectory = Directory.GetCurrentDirectory();
+    //    string filePath = Path.Combine("..", "Buses.json");
+    //    // Get the full path by combining with the current directory
+    //    string fullPath = Path.Combine(currentDirectory, filePath);
         string vehicleFilePath = "/Users/ATIFHANIF/Desktop/sda/Transportation_System/Buses.json";
 
         if (File.Exists(vehicleFilePath))
@@ -78,7 +86,7 @@ public class Aeroplane : IVehicles
     public Vehicle AssignVehicle()
     {
         List<Vehicle> allVehicles = LoadVehicles();
-        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Aeroplane" && v.Status == "Available");
+        Vehicle availableVehicle = allVehicles.Find(v => v.Type == "Bus" && v.Status == "Available");
         //Vehicle availableVehicle = vehicles.Find(v => v.Type == vehicleType && v.Status == "Available");
 
         if (availableVehicle != null)

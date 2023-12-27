@@ -14,7 +14,7 @@ class Program
 
     static List<Customer> customers = new List<Customer>();
     static List<Booking> bookings = new List<Booking>();
-    static List<Vehicle> vehicles = new List<Vehicle>();
+    //static List<Vehicle> vehicles = new List<Vehicle>();
 
     static Customer loggedInCustomer;
 
@@ -32,11 +32,11 @@ class Program
             bookings = JsonConvert.DeserializeObject<List<Booking>>(bookingJson);
         }
 
-        if (File.Exists(vehicleFilePath))
-        {
-            string vehicleJson = File.ReadAllText(vehicleFilePath);
-            vehicles = JsonConvert.DeserializeObject<List<Vehicle>>(vehicleJson);
-        }
+        //if (File.Exists(vehicleFilePath))
+        //{
+        //    string vehicleJson = File.ReadAllText(vehicleFilePath);
+        //    vehicles = JsonConvert.DeserializeObject<List<Vehicle>>(vehicleJson);
+        //}
     }
     static void SaveData()
     {
@@ -46,8 +46,8 @@ class Program
         string bookingJson = JsonConvert.SerializeObject(bookings);
         File.WriteAllText(bookingFilePath, bookingJson);
 
-        string vehicleJson = JsonConvert.SerializeObject(vehicles);
-        File.WriteAllText(vehicleFilePath, vehicleJson);
+        //string vehicleJson = JsonConvert.SerializeObject(vehicles);
+        //File.WriteAllText(vehicleFilePath, vehicleJson);
     }
     static int GetIntInput(string prompt)
     {
@@ -70,7 +70,8 @@ class Program
         {
             Console.WriteLine("1. Sign Up");
             Console.WriteLine("2. Log In");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Administrator Log In");
+            Console.WriteLine("4. Exit");
 
             int choice = GetIntInput("Enter your choice: ");
 
@@ -78,11 +79,15 @@ class Program
             {
                 case 1:
                     SignUp();
+                    SaveData();
                     break;
                 case 2:
                     LogIn();
                     break;
                 case 3:
+                    Administrator.Instance.AdministratorLogIn();
+                    break;
+                case 4:
                     SaveData();
                     Environment.Exit(0);
                     break;
@@ -224,13 +229,14 @@ class Program
             Console.WriteLine("3. Bike");
             Console.WriteLine("4. Aeroplane");
             Console.WriteLine("5. Train");
+            Console.WriteLine("6. Bus");
 
             int vehicleTypeChoice = GetIntInput("Enter the number corresponding to the vehicle type: ");
             string vehicleType = GetVehicleTypeFromChoice(vehicleTypeChoice);
 
-            Console.Write("Enter current destination: ");
+            Console.Write("Enter current location: ");
             string currentDestination = Console.ReadLine();
-            Console.Write("Enter arrival destination: ");
+            Console.Write("Enter arrival location: ");
             string arrivalDestination = Console.ReadLine();
             int numberOfPassengers = GetIntInput("Enter the number of passengers: ");
             DateTime departureDateTime = GetDateTimeInput("Enter departure date and time (yyyy-MM-dd HH:mm): ");
@@ -261,7 +267,9 @@ class Program
 
                 bookings.Add(newBooking);
 
-                Vehicle assignedVehicle = AssignVehicle(vehicleType);
+                //Vehicle assignedVehicle = AssignVehicle(vehicleType);
+                IVehicles Type = VehiclesFactory.getVahicles(vehicleTypeChoice);
+                Vehicle assignedVehicle = Type.AssignVehicle();
                 if (assignedVehicle != null)
                 {
                     Console.WriteLine("Booking confirmed successfully. Here is your booking slip:");
@@ -321,23 +329,23 @@ class Program
             return rand.Next(1000, 10001);
         }
 
-        static Vehicle AssignVehicle(string vehicleType)
-        {
-            if (vehicles == null)
-            {
-                Console.WriteLine("vehicle obj created");
-                vehicles = new List<Vehicle>();
-            }
-            Vehicle availableVehicle = vehicles.Find(v => v.Type == vehicleType && v.Status == "Available");
+        //static Vehicle AssignVehicle(string vehicleType)
+        //{
+        //    if (vehicles == null)
+        //    {
+        //        Console.WriteLine("vehicle obj created");
+        //        vehicles = new List<Vehicle>();
+        //    }
+        //    Vehicle availableVehicle = vehicles.Find(v => v.Type == vehicleType && v.Status == "Available");
 
-            if (availableVehicle != null)
-            {
-                availableVehicle.Status = "Not Available";
-                return availableVehicle;
-            }
+        //    if (availableVehicle != null)
+        //    {
+        //        availableVehicle.Status = "Not Available";
+        //        return availableVehicle;
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
         static string GetVehicleTypeFromChoice(int choice)
         {
