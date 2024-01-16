@@ -34,6 +34,8 @@ class Administrator
         // For simplicity, you can hardcode the administrator credentials
         if (adminUsername == "admin" && adminPassword == "adminpass")
         {
+            Console.WriteLine();
+            Console.WriteLine("Welcome Admin");
             AdministratorMenu();
         }
         else
@@ -46,30 +48,35 @@ class Administrator
     {
         while (true)
         {
+            Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Administrator Menu:");
             Console.WriteLine("1. View Booking Details by Date");
             Console.WriteLine("2. View Booking Details by ID");
             Console.WriteLine("3. View Vehicle Details by Type");
             Console.WriteLine("4. View Customer Details");
             Console.WriteLine("5. Exit");
-
+            Console.WriteLine("----------------------------------------------");
             int choice = GetIntInput("Enter your choice: ");
 
             switch (choice)
             {
                 case 1:
+                    Console.WriteLine();
                     DateTime dateToReview = GetDateTimeInput("Enter the date to review (yyyy-MM-dd): ");
                     ViewBookingDetailsByDate(dateToReview);
                     break;
                 case 2:
+                    Console.WriteLine();
                     string bookingIdToReview = GetStringInput("Enter the booking ID to review: ");
                     ViewBookingDetailsById(bookingIdToReview);
                     break;
                 case 3:
+                    Console.WriteLine();
                     string vehicleTypeToReview = GetStringInput("Enter the vehicle type to review: ");
                     ViewVehicleDetailsByType(vehicleTypeToReview);
                     break;
                 case 4:
+                    Console.WriteLine();
                     string searchCriteria = GetStringInput("Enter the name, ID, or username to search for: ");
                     ViewCustomerDetails(searchCriteria);
                     break;
@@ -116,8 +123,7 @@ class Administrator
 
     private List<Booking> LoadBookings()
     {
-        string bookingFilePath = "/Users/ATIFHANIF/Projects/trans/bookings.json";
-
+        string bookingFilePath = Path.Combine(GetProjectDirectory(), "database", "bookings.json");
         if (File.Exists(bookingFilePath))
         {
             string bookingJson = File.ReadAllText(bookingFilePath);
@@ -125,6 +131,15 @@ class Administrator
         }
 
         return new List<Booking>();
+        //string bookingFilePath = "/Users/ATIFHANIF/Projects/trans/bookings.json";
+
+        //if (File.Exists(bookingFilePath))
+        //{
+        //    string bookingJson = File.ReadAllText(bookingFilePath);
+        //    return JsonConvert.DeserializeObject<List<Booking>>(bookingJson);
+        //}
+
+        //return new List<Booking>();
     }
 
 
@@ -169,6 +184,7 @@ class Administrator
 
             foreach (var vehicle in matchingVehicles)
             {
+                Console.WriteLine();
                 Console.WriteLine($"Vehicle ID: {vehicle.Id}");
                 Console.WriteLine($"Type: {vehicle.Type}");
                 Console.WriteLine($"Model: {vehicle.Model}");
@@ -187,8 +203,11 @@ class Administrator
     // The LoadVehicles function remains the same
     private List<Vehicle> LoadVehicles()
     {
-        string vehicleFilePath = "/Users/ATIFHANIF/Projects/trans/vehicles.json";
-
+        //    string currentDirectory = Directory.GetCurrentDirectory();
+        //    string filePath = Path.Combine("..", "Buses.json");
+        //    // Get the full path by combining with the current directory
+        //    string fullPath = Path.Combine(currentDirectory, filePath);
+        string vehicleFilePath = Path.Combine(GetProjectDirectory(), "database", "vehicles.json");
         if (File.Exists(vehicleFilePath))
         {
             string vehicleJson = File.ReadAllText(vehicleFilePath);
@@ -201,10 +220,10 @@ class Administrator
 
     private void ViewCustomerDetails(string searchCriteria)
     {
-        // Read existing customers from the file
+       
         List<Customer> allCustomers = LoadCustomers();
 
-        // Filter customers by the provided search criteria (name, ID, or username)
+        
         List<Customer> matchingCustomers = allCustomers
             .Where(c => c.Name.Contains(searchCriteria, StringComparison.OrdinalIgnoreCase) ||
                         c.Id.Equals(searchCriteria, StringComparison.OrdinalIgnoreCase) ||
@@ -217,13 +236,13 @@ class Administrator
 
             foreach (var customer in matchingCustomers)
             {
+                Console.WriteLine();
                 Console.WriteLine($"Customer ID: {customer.Id}");
                 Console.WriteLine($"Name: {customer.Name}");
                 Console.WriteLine($"Age: {customer.Age}");
                 Console.WriteLine($"Mobile Number: {customer.MobileNumber}");
                 Console.WriteLine($"Email: {customer.Email}");
                 Console.WriteLine($"Username: {customer.Username}");
-                // Don't display the password to the admin
                 Console.WriteLine();
             }
         }
@@ -233,11 +252,10 @@ class Administrator
         }
     }
 
-    // The LoadCustomers function remains the same
+ 
     private List<Customer> LoadCustomers()
     {
-        string customerFilePath = "/Users/ATIFHANIF/Projects/trans/customers.json";
-
+        string customerFilePath = Path.Combine(GetProjectDirectory(), "database", "customers.json");
         if (File.Exists(customerFilePath))
         {
             string customerJson = File.ReadAllText(customerFilePath);
@@ -248,7 +266,7 @@ class Administrator
     }
 
 
-    // Helper methods
+
     private int GetIntInput(string prompt)
     {
         int input;
@@ -275,5 +293,21 @@ class Administrator
             Console.Write("Invalid input. Please enter a valid date and time: ");
         }
         return input;
+    }
+    static string GetProjectDirectory()
+    {
+        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        return RemoveBinDebugFromPath(baseDirectory);
+    }
+
+    
+    static string RemoveBinDebugFromPath(string path)
+    {
+        int binDebugIndex = path.IndexOf("bin/Debug/net7.0", StringComparison.OrdinalIgnoreCase);
+        if (binDebugIndex >= 0)
+        {
+            return path.Substring(0, binDebugIndex);
+        }
+        return path;
     }
 }

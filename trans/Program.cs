@@ -20,7 +20,7 @@ class Program
     static string bookingFileName = "bookings.json";
     //static string vehicleFileName = "vehicles.json";
 
-    // Use Path.Combine to construct the full paths
+   
     static string customerFilePath = Path.Combine(GetProjectDirectory(), "database", customerFileName);
     static string bookingFilePath = Path.Combine(GetProjectDirectory(), "database", bookingFileName);
     //static string vehicleFilePath = Path.Combine(GetProjectDirectory(), "vehicles.json");
@@ -36,7 +36,7 @@ class Program
         return RemoveBinDebugFromPath(baseDirectory);
     }
 
-    // Helper method to remove "bin/Debug/net7.0" from the path
+    
     static string RemoveBinDebugFromPath(string path)
     {
         int binDebugIndex = path.IndexOf("bin/Debug/net7.0", StringComparison.OrdinalIgnoreCase);
@@ -103,10 +103,13 @@ class Program
             {
                 SaveData();
             }
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------");
             Console.WriteLine("1. Sign Up");
             Console.WriteLine("2. Log In");
             Console.WriteLine("3. Administrator Log In");
             Console.WriteLine("4. Exit");
+            Console.WriteLine("----------------------------------------------");
             i = 0;
 
             int choice = GetIntInput("Enter your choice: ");
@@ -122,6 +125,7 @@ class Program
                     break;
                 case 3:
                     Administrator.Instance.AdministratorLogIn();
+              
                     break;
                 case 4:
                     SaveData();
@@ -158,6 +162,7 @@ class Program
             Username = username,
             Password = password
         };
+        Console.WriteLine();
         Console.WriteLine("id = " + newCustomer.Id);
         Console.WriteLine("Name = " + newCustomer.Name);
         if (customers == null)
@@ -180,15 +185,19 @@ class Program
 
         if (loggedInCustomer != null)
         {
+            Console.WriteLine();
             Console.WriteLine($"Welcome, {loggedInCustomer.Name}!");
 
             while (true)
             {
+                Console.WriteLine();
+                Console.WriteLine("----------------------------------------------");
                 Console.WriteLine("1. Book a Vehicle");
                 Console.WriteLine("2. Reset Password");
                 Console.WriteLine("3. View Booking Details");
                 Console.WriteLine("4. Complain/query");
                 Console.WriteLine("5. Log Out");
+                Console.WriteLine("----------------------------------------------");
 
                 int choice = GetIntInput("Enter your choice: ");
 
@@ -216,12 +225,19 @@ class Program
                 }
             }
         }
+        if(loggedInCustomer == null)
+        {
+            Console.WriteLine();
+            Console.WriteLine("xxxxxxxxxxxxxxxxxxxx");
+            Console.WriteLine("Invalid Credientials");
+            Console.WriteLine("xxxxxxxxxxxxxxxxxxxx");
+        }
         static void HandleComplaint()
         {
             Console.Write("Enter your complaint or query: ");
             //string complaint = Console.ReadLine();
 
-            // Initialize the client and send the complaint to the server
+           
             Client client = new Client();
 
             //client.SendComplaint(complaint);
@@ -241,6 +257,8 @@ class Program
                 Console.WriteLine("Booking Details:");
                 foreach (var booking in customerBookings)
                 {
+                    Console.WriteLine();
+                    Console.WriteLine("{");
                     Console.WriteLine($"Booking ID: {booking.Id}");
                     Console.WriteLine($"Vehicle Type: {booking.VehicleType}");
                     Console.WriteLine($"Current Destination: {booking.CurrentDestination}");
@@ -248,17 +266,21 @@ class Program
                     Console.WriteLine($"Number of Passengers: {booking.NumberOfPassengers}");
                     Console.WriteLine($"Departure Date and Time: {booking.DepartureDateTime}");
                     Console.WriteLine($"Estimated Fare: Rs. {booking.EstimatedFare}");
+                    Console.WriteLine("}");
                     Console.WriteLine();
                 }
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("No bookings yet.");
             }
         }
 
         static void BookVehicle()
         {
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Vehicle Types:");
             Console.WriteLine("1. Car");
             Console.WriteLine("2. Truck");
@@ -266,6 +288,7 @@ class Program
             Console.WriteLine("4. Aeroplane");
             Console.WriteLine("5. Train");
             Console.WriteLine("6. Bus");
+            Console.WriteLine("----------------------------------------------");
 
             int vehicleTypeChoice = GetIntInput("Enter the number corresponding to the vehicle type: ");
             string vehicleType = GetVehicleTypeFromChoice(vehicleTypeChoice);
@@ -325,12 +348,15 @@ class Program
                 {
                     assignedVehicle.Status = "Assigned";
                     Console.WriteLine("Booking confirmed successfully. Here is your booking slip:");
+                    Console.WriteLine("***********************************************************");
                     Console.WriteLine($"Booking ID: {newBooking.Id}");
                     Console.WriteLine($"Vehicle Type: {assignedVehicle.Type}");
                     Console.WriteLine($"Model: {assignedVehicle.Model}");
                     Console.WriteLine($"Number Plate: {assignedVehicle.NumberPlate}");
                     Console.WriteLine($"Driver Name: {assignedVehicle.DriverName}");
                     Console.WriteLine($"Status: {assignedVehicle.Status}");
+                    Console.WriteLine("***********************************************************");
+
                 }
                 else
                 {
